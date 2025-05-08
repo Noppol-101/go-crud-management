@@ -1,0 +1,6 @@
+{
+  "watch": ["."],
+  "ext": "go",
+  "exec": "go run ./cmd/main.go start",
+  "delay":1000
+}
