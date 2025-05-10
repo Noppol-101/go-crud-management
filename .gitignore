@@ -659,8 +659,7 @@ MigrationBackup/
 
 # End of https://www.toptal.com/developers/gitignore/api/go,goland,vs,python
 
+config.yml
 config.yaml
 
 .vscode
-
-docker-compose.*
