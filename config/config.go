@@ -9,7 +9,7 @@ import (
 
 func InitConfigEnvironment() {
 	viper.SetConfigName("config")
-	viper.SetConfigType("yaml")
+	viper.SetConfigType("yml")
 	viper.AddConfigPath("config")
 	viper.AddConfigPath(".")
 	viper.AutomaticEnv()

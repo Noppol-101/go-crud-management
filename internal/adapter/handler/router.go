@@ -11,6 +11,7 @@ type Router struct {
 }
 
 type RouterParams struct {
+	CategoryHandler CategoryHandler
 }
 
 func NewRouter(p RouterParams) (*Router, error) {
@@ -19,6 +20,13 @@ func NewRouter(p RouterParams) (*Router, error) {
 	})
 
 	app.Use(middleware.Recover())
+
+	api := app.Group("/api")
+
+	version1 := api.Group("/v1")
+
+	categoryv1 := version1.Group("/category")
+	categoryv1.Post("/", p.CategoryHandler.CreateCategory)
 
 	return &Router{
 		App: app,
