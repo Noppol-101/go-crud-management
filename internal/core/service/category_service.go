@@ -18,7 +18,7 @@ func NewCategoryService(categoryRepo port.CategoryRepository) port.CategoryServi
 	}
 }
 
-func (s *categoryServiceImpl) CreateCategory(Category domain.Categories) (dto.DtoCreateCategory, error) {
+func (s *categoryServiceImpl) CreateCategory(Category *domain.Categories) (dto.DtoCreateCategory, error) {
 
 	if Category.UUID == uuid.Nil {
 		Category.UUID = uuid.New()

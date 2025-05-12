@@ -17,9 +17,9 @@ func NewCategoryGormRepo(db *gorm.DB) port.CategoryRepository {
 	}
 }
 
-func (r *categoryGormRepo) SaveData(Category domain.Categories) error {
+func (r *categoryGormRepo) SaveData(Category *domain.Categories) error {
 
-	if result := r.db.Create(&Category); result.Error != nil {
+	if result := r.db.Create(Category); result.Error != nil {
 		return result.Error
 	}
 	return nil

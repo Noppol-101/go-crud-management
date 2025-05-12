@@ -19,7 +19,7 @@ func NewCategoryHandler(categorySrv port.CategoryService) CategoryHandler {
 }
 
 func (h CategoryHandler) CreateCategory(c *fiber.Ctx) error {
-	var category domain.Categories
+	category := new(domain.Categories)
 	if err := c.BodyParser(&category); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"error": "invalid request",

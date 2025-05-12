@@ -6,13 +6,13 @@ import (
 )
 
 type CategoryRepository interface {
-	SaveData(Category domain.Categories) error
+	SaveData(Category *domain.Categories) error
 	// FindData()
 	// FindDataById()
 }
 
 type CategoryService interface {
-	CreateCategory(Category domain.Categories) (dto.DtoCreateCategory, error)
+	CreateCategory(Category *domain.Categories) (dto.DtoCreateCategory, error)
 	// FindCategory()
 	// FindCategoryById()
 }
